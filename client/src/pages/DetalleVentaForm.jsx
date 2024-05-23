@@ -1,7 +1,6 @@
 import React from "react";
 
 export function DetalleVentaForm() {
-  // Implementa el formulario para agregar detalles de venta
   return (
     <div>
       <h2>Agregar Detalle de Venta</h2>

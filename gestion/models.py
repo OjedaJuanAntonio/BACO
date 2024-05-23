@@ -45,11 +45,8 @@ class DetalleVenta(models.Model):
     subtotal = models.DecimalField(max_digits=10, decimal_places=2)
 
     def save(self, *args, **kwargs):
-        # Obtener el valor del bulto del producto asociado
         valor_bulto = self.producto.valor_bulto
-        # Calcular el precio unitario
         self.precio_unitario = valor_bulto / self.producto.uniddades_bulto
-        # Calcular el subtotal
         self.subtotal = self.cantidad * self.precio_unitario
         super().save(*args, **kwargs)
 
